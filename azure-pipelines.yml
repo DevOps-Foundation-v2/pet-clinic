@@ -58,7 +58,7 @@ stages:
       displayName: 'Publish Analysis Results'
 - stage: Deploy 
   jobs:
-  - job: 
+  - job: buildImage
     steps:
     - task: DownloadBuildArtifacts@0
       inputs:
@@ -98,7 +98,9 @@ stages:
       inputs:
         kubectlVersion: 'latest'
       displayName: Instalacion Kubectl
-      
+  
+  - job: Deployment
+    steps:
     - task: Kubernetes@1
       inputs:
         connectionType: 'Azure Resource Manager'
