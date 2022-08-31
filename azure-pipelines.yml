@@ -36,7 +36,7 @@ steps:
     projectKey: 'DevOps-Foundation-v2_pet-clinic'
     projectName: 'pet-clinic'
     extraProperties: |
-      sonar.coverage.jacoco.xmlReportPaths=$(SUBFOLDER_NAME)/build/reports/jacoco/test/jacocoTestReport.xml
+      sonar.coverage.jacoco.xmlReportPaths=$(Build.SourcesDirectory)/build/reports/jacoco/test/jacocoTestReport.xml
   displayName: 'Preparing Sonarqube Environment'
     
 - task: Gradle@3
