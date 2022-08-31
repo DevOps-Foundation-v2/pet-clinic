@@ -43,7 +43,7 @@ test {
 }
 
 jacocoTestReport {
-  dependsOn Test
+  dependsOn test
 	reports {
 		html.enabled true
 		xml.enabled true
