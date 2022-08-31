@@ -19,6 +19,7 @@ steps:
     sourceFolder: '$(Build.SourcesDirectory)'
     contents: |
         **/build/libs/*.jar
+        **/build/reports/jacoco/*.xml
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
