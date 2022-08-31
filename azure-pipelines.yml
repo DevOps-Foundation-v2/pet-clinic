@@ -6,9 +6,11 @@ steps:
 - task: Gradle@3
   inputs:
     gradleWrapperFile: 'gradlew'
-    tasks: 'build'
+    tasks: 'build jacocoTestReport'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOption: 'JaCoCo'
+    codeCoverageClassFilesDirectories: 'build/classes/main/'
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
     spotBugsAnalysis: false
@@ -33,6 +35,8 @@ steps:
     organization: 'devops-foundationv2'
     projectKey: 'DevOps-Foundation-v2_pet-clinic'
     projectName: 'pet-clinic'
+    extraProperties: |
+      sonar.coverage.jacoco.xmlReportPaths=$(SUBFOLDER_NAME)/build/reports/jacoco/test/jacocoTestReport.xml
   displayName: 'Preparing Sonarqube Environment'
     
 - task: Gradle@3
