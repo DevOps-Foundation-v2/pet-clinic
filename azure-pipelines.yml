@@ -24,6 +24,7 @@ steps:
     contents: |
         **/build/libs/*.jar
         **/build/**/*.xml
+        **/build/**/*.html
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
